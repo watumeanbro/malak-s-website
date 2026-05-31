@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata defining document characteristics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title and description for SEO and browser tab display -->
+    <title>malak's website | Journal</title>
+    <meta name="description" content="My journal containing random thoughts, lessons learned, and progress updates on my journey.">
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <!-- The exact same <nav> component from index.html to ensure consistent page navigation. -->
+    <nav>
+        <ul>
+            <!-- Relative links to the 4 pages in the website -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <!-- Note: Linked to favorites.html to match the file created in your workspace -->
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. MAIN HEADER -->
+    <!-- The <header> element contains page-specific introductory context and title. -->
+    <header>
+        <h1>my journal</h1>
+        <p>
+            this is my cozy corner of the web where i write about what's on my mind, 
+            things i've learned, and occasional reflections about my developer journey.
+        </p>
+    </header>
+
+    <!-- 3. MAIN SECTION -->
+    <!-- The <main> tag holds the main content unique to this page. -->
+    <main>
+        
+        <!-- Unordered list (<ul>) representing the journal feed. -->
+        <!-- The <ul> element is a semantic container for items whose sequence does not mathematically matter. -->
+        <ul>
+            
+            <!-- Each <li> represents an individual item in the list (in this case, a journal entry). -->
+            <li>
+                <!-- The semantic <time> tag represents a specific date/time. -->
+                <!-- The 'datetime' attribute is crucial for SEO and accessibility, offering a machine-readable format (YYYY-MM-DD). -->
+                <time datetime="2026-05-31">31 May, 2026</time>
+                <!-- An anchor tag (<a>) representing a clickable hyperlink to the entry. -->
+                <a href="#">being creative is never enough.</a>
+            </li>
+
+            <li>
+                <time datetime="2026-05-15">15 May, 2026</time>
+                <a href="#">learning git for the first time</a>
+            </li>
+
+            <li>
+                <time datetime="2026-05-01">01 May, 2026</time>
+                <a href="#">building in public is a superpower</a>
+            </li>
+
+        </ul>
+
+    </main>
+
+    <!-- 4. NO FOOTER -->
+    <!-- As requested, this page does not contain a <footer> element. -->
+
+</body>
+</html>

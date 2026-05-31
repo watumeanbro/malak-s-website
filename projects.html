@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata defining document characteristics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title and description for SEO and browser tab display -->
+    <title>malak's website | Projects</title>
+    <meta name="description" content="a list of projects i have worked on, am currently building, or want to tackle in the future.">
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <!-- The exact same <nav> component from index.html to ensure consistent page navigation. -->
+    <nav>
+        <ul>
+            <!-- Relative links to the 4 pages in the website -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <!-- Note: Linked to favorites.html to match the file created in your workspace -->
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. MAIN HEADER -->
+    <!-- The <header> element contains page-specific introductory context and title. -->
+    <header>
+        <h1>things i worked on... (or want to)</h1>
+        <p>
+            here is a little tracker of the main projects i've built..
+        </p>
+    </header>
+
+    <!-- 3. MAIN SECTION -->
+    <!-- The <main> tag holds the main content unique to this page. -->
+    <main>
+
+        <!-- A semantic HTML <table> element is the perfect container for structured tabular data. -->
+        <table>
+            <!-- <caption> is a semantic tag to describe what the table represents. -->
+            <caption>Project Portfolio and Statuses</caption>
+            
+            <!-- <thead> groups the header content of a table for accessibility and styling. -->
+            <thead>
+                <!-- <tr> defines a table row -->
+                <tr>
+                    <!-- <th> defines header cells. 'scope="col"' specifies that the cell is a header for a column. -->
+                    <th scope="col">Project</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            
+            <!-- <tbody> groups the main content body of the table. -->
+            <tbody>
+                <!-- Row for copycritic -->
+                <tr>
+                    <!-- <td> defines a standard table data cell -->
+                    <td><a href="https://www.copycritic.online/">copycritic</a></td>
+                    <td>a tool that tweaks and sharpens your website's copy so you turn more casual readers into actual buyers..</td>
+                    <td>not launched yet</td>
+                </tr>
+                
+                <!-- Row for draftme -->
+                <tr>
+                    <td><a href="https://draftme.online/">draftme</a></td>
+                    <td>a little tool that helps student write the first draft of their applications.</td>
+                    <td>alive</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 4. IDEAS SECTION -->
+        <!-- <section> represents a standalone section of a page that shares a theme. -->
+        <section>
+            <h2>Ideas</h2>
+            <p>things i wanna build next:</p>
+            <!-- empty for now -->
+            <p> empty for now...</p> 
+        </section>
+
+    </main>
+
+
+</body>
+</html>
