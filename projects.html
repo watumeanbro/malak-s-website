@@ -37,13 +37,16 @@
             <!-- Note: Linked to favorites.html to match the file created in your workspace -->
             <li><a href="favorites.html">Favorites</a></li>
         </ul>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2v20a10 10 0 0 0 0-20z" fill="currentColor"></path>
-            </svg>
-            <span>prefer light?</span>
-        </button>
+        <div class="theme-switcher">
+            <span id="theme-text" class="theme-callout">prefer light?</span>
+            <img class="theme-arrow" src="assets/arrow-scribble.svg" alt="" aria-hidden="true">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2v20a10 10 0 0 0 0-20z"></path>
+                </svg>
+            </button>
+        </div>
     </nav>
 
     <!-- 2. MAIN HEADER -->

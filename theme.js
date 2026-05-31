@@ -1,15 +1,15 @@
 // Theme Toggle Logic for Malak's Website
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
+    const textSpan = document.getElementById('theme-text');
     
     // Set theme and update localStorage and button text
     const setTheme = (isLight) => {
-        const textSpan = themeToggleBtn ? themeToggleBtn.querySelector('span') : null;
         if (isLight) {
             document.body.classList.add('light-mode');
             document.documentElement.classList.add('light-mode');
             if (textSpan) {
-                textSpan.textContent = 'prefer dark?';
+                textSpan.textContent = 'go dark!';
             }
             localStorage.setItem('theme', 'light');
         } else {

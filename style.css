@@ -100,14 +100,17 @@ a:hover {
 nav {
     margin-bottom: 64px;       /* Pushes header content down */
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 24px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 20px;                 /* Clean spacing between menu links */
+    margin-right: auto;
 }
 
 nav li a {
@@ -121,42 +124,101 @@ nav li a.active {
     color: var(--text-color);  /* Hover transitions and active link remain highlighted */
 }
 
-/* Minimalist Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    text-transform: lowercase; /* Ensure text is strictly lowercase */
-    cursor: pointer;
-    padding: 0;
+.theme-switcher {
+    position: relative;
     display: inline-flex;
-    align-items: center;       /* Perfectly center icon and text vertically */
-    justify-content: center;
-    gap: 8px;                  /* Clean, deliberate horizontal margin/gap */
-    line-height: 1;            /* Eliminate baseline drift */
-    transition: color 0.15s ease, opacity 0.15s ease;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    
+    /* FIXED: Shifts the icon button down directly onto the navigation text baseline */
+    transform: translateY(6px);
 }
 
-.theme-toggle:hover {
+.theme-callout {
+    position: absolute;
+    /* Positions it out to the left and down below the button */
+    right: 42px;
+    top: 28px;
+    color: var(--text-muted);     
+    font-family: "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-style: italic;
+    white-space: nowrap;
+    transform: rotate(-2deg);
+    pointer-events: none;
+    line-height: 1;
+}
+
+.theme-arrow {
+    position: absolute;
+    /* Places the arrow precisely between the text and the bottom of the button */
+    right: 15px;
+    top: 25px;
+    width: 24px;
+    height: auto;
+    opacity: 0.6;
+    transform: rotate(-5deg);
+    pointer-events: none;
+}
+
+.light-mode .theme-arrow {
+    opacity: 0.55;
+}
+
+body:not(.light-mode) .theme-arrow {
+    filter: invert(80%) sepia(6%) saturate(100%) hue-rotate(200deg) brightness(90%) contrast(90%);
+    opacity: 0.5;
+}
+
+/* Icon-only theme button */
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    
+    /* FIXED: This forces the icon button color to match your nav links */
+    color: var(--text-muted); 
+    transition: color 0.15s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
     color: var(--text-color);
-    opacity: 0.85;             /* Subtle hover state */
+    opacity: 0.85;
+    outline: none;
 }
 
 /* Ensure the inline theme SVG scales nicely and centers */
 .theme-toggle svg {
     flex-shrink: 0;
-    display: inline-block;
-    vertical-align: middle;
-    width: 14px;
-    height: 14px;
+    display: block;
+    width: 15px;
+    height: 15px;
 }
 
-.theme-toggle span {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
+.theme-icon circle {
+    fill: none;
+    stroke: currentColor; /* Inherits var(--text-muted) */
+    stroke-width: 2;
+}
+
+.theme-icon path {
+    fill: currentColor;
 }
 
 /* --------------------------------------------------------------------------
