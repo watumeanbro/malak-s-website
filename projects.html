@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Metadata defining document characteristics -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Page title and description for SEO and browser tab display -->
     <title>malak's website | Projects</title>
-    <meta name="description" content="a list of projects i have worked on, am currently building, or want to tackle in the future.">
+    <meta name="description"
+        content="a list of projects i have worked on, am currently building, or want to tackle in the future.">
+
+    <!-- Link to the central stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Theme Toggle Scripts -->
+    <script src="theme.js" defer></script>
+    <script>
+        // Prevent theme flash on page load
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light-mode');
+        }
+    </script>
 </head>
+
 <body>
 
     <!-- 1. NAVIGATION BAR -->
@@ -17,11 +32,18 @@
         <ul>
             <!-- Relative links to the 4 pages in the website -->
             <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="journal.html">Journal</a></li>
             <!-- Note: Linked to favorites.html to match the file created in your workspace -->
             <li><a href="favorites.html">Favorites</a></li>
         </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2v20a10 10 0 0 0 0-20z" fill="currentColor"></path>
+            </svg>
+            <span>prefer light?</span>
+        </button>
     </nav>
 
     <!-- 2. MAIN HEADER -->
@@ -39,9 +61,6 @@
 
         <!-- A semantic HTML <table> element is the perfect container for structured tabular data. -->
         <table>
-            <!-- <caption> is a semantic tag to describe what the table represents. -->
-            <caption>Project Portfolio and Statuses</caption>
-            
             <!-- <thead> groups the header content of a table for accessibility and styling. -->
             <thead>
                 <!-- <tr> defines a table row -->
@@ -52,22 +71,23 @@
                     <th scope="col">Status</th>
                 </tr>
             </thead>
-            
+
             <!-- <tbody> groups the main content body of the table. -->
             <tbody>
                 <!-- Row for copycritic -->
                 <tr>
                     <!-- <td> defines a standard table data cell -->
                     <td><a href="https://www.copycritic.online/">copycritic</a></td>
-                    <td>a tool that tweaks and sharpens your website's copy so you turn more casual readers into actual buyers..</td>
-                    <td>not launched yet</td>
+                    <td>a tool that tweaks and sharpens your website's copy so you turn more casual readers into actual
+                        buyers..</td>
+                    <td><span class="status-tag status-not-launched">not launched yet</span></td>
                 </tr>
-                
+
                 <!-- Row for draftme -->
                 <tr>
                     <td><a href="https://draftme.online/">draftme</a></td>
                     <td>a little tool that helps student write the first draft of their applications.</td>
-                    <td>alive</td>
+                    <td><span class="status-tag status-alive">alive</span></td>
                 </tr>
             </tbody>
         </table>
@@ -78,11 +98,12 @@
             <h2>Ideas</h2>
             <p>things i wanna build next:</p>
             <!-- empty for now -->
-            <p> empty for now...</p> 
+            <p> empty for now...</p>
         </section>
 
     </main>
 
 
 </body>
+
 </html>

@@ -1,0 +1,342 @@
+/* ==========================================================================
+   STYLE SHEET FOR MALAK'S WEBSITE
+   Inspired by the layouts of iamrob.in and farza.com
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN SYSTEM VARIABLES
+   Using CSS variables (:root) to define a cohesive, easily adjustable system.
+   -------------------------------------------------------------------------- */
+:root {
+    /* Color Palette: Cozy, Soft Dark Mode */
+    --bg-color: #121214;         /* Deep rich dark background */
+    --text-color: #e4e4e7;       /* Soft zinc off-white for body text */
+    --text-muted: #a1a1aa;       /* Muted gray for secondary descriptions and dates */
+    
+    /* Accent details inspired by minimalist portfolios */
+    --accent-color: #60a5fa;     /* Crisp soft blue for links/actions */
+    --accent-hover: #93c5fd;     /* Lighter blue for active hover feedback */
+    --border-color: #27272a;     /* Very subtle zinc dark border lines */
+
+    /* Status Tag Colors (Dark Mode default) */
+    --status-alive-bg: rgba(34, 197, 94, 0.15);
+    --status-alive-text: #86efac;
+    --status-not-launched-bg: rgba(234, 179, 8, 0.15);
+    --status-not-launched-text: #fef08a;
+    --status-cancelled-bg: rgba(239, 68, 68, 0.15);
+    --status-cancelled-text: #fca5a5;
+
+    /* Typography Settings */
+    /* System Monospace font-stack for a sharp, developer-aesthetic feel */
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-size-base: 14px;
+    --line-height-base: 1.6;
+
+    /* Layout Spacing */
+    --max-width: 650px;          /* Clean single-column layout constraint */
+}
+
+/* Light Mode Overrides */
+.light-mode {
+    --bg-color: #ffffff;         /* Clean white background */
+    --text-color: #18181b;       /* Dark zinc text */
+    --text-muted: #71717a;       /* Muted gray */
+    --accent-color: #2563eb;     /* Rich blue for links */
+    --accent-hover: #1d4ed8;     /* Darker blue on hover */
+    --border-color: #e4e4e7;     /* Light border lines */
+    
+    /* Status Tag Colors (Light Mode) */
+    --status-alive-bg: rgba(34, 197, 94, 0.1);
+    --status-alive-text: #15803d;
+    --status-not-launched-bg: rgba(234, 179, 8, 0.1);
+    --status-not-launched-text: #a16207;
+    --status-cancelled-bg: rgba(239, 68, 68, 0.1);
+    --status-cancelled-text: #b91c1c;
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE HTML RESET & LAYOUT
+   Standardizing styling behavior across modern browsers.
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    max-width: var(--max-width);
+    margin: 0 auto;             /* Centers the entire page content */
+    padding: 60px 24px;         /* Breathing room on screen edges and mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY & LINKS
+   Clean inline styling and hover micro-animations.
+   -------------------------------------------------------------------------- */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--border-color); /* Elegant dotted underline */
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    border-bottom: 1px solid var(--accent-hover); /* Solid underline on hover */
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION (<nav>)
+   Flat, bullet-free, single-row layout inspired by iamrob.in.
+   -------------------------------------------------------------------------- */
+nav {
+    margin-bottom: 64px;       /* Pushes header content down */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;                 /* Clean spacing between menu links */
+}
+
+nav li a {
+    color: var(--text-muted);
+    border-bottom: none;       /* Remove underline for navigation links */
+    font-size: 0.95rem;
+}
+
+nav li a:hover,
+nav li a.active {
+    color: var(--text-color);  /* Hover transitions and active link remain highlighted */
+}
+
+/* Minimalist Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    text-transform: lowercase; /* Ensure text is strictly lowercase */
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;       /* Perfectly center icon and text vertically */
+    justify-content: center;
+    gap: 8px;                  /* Clean, deliberate horizontal margin/gap */
+    line-height: 1;            /* Eliminate baseline drift */
+    transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--text-color);
+    opacity: 0.85;             /* Subtle hover state */
+}
+
+/* Ensure the inline theme SVG scales nicely and centers */
+.theme-toggle svg {
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+}
+
+.theme-toggle span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER & SECTIONS
+   Structure, spacing, and micro-hierarchy.
+   -------------------------------------------------------------------------- */
+header {
+    margin-bottom: 48px;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+header p {
+    color: var(--text-muted);
+}
+
+main {
+    margin-bottom: 64px;
+}
+
+section {
+    margin-top: 48px;
+}
+
+section h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+section p {
+    color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. PROJECTS TABLE (<table>)
+   Minimalist padding, crisp borders, and beautiful alignment.
+   -------------------------------------------------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;  /* Merges adjacent cell borders */
+    margin: 32px 0;
+    text-align: left;
+}
+
+table caption {
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+th, td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+th {
+    color: var(--text-color);
+    font-weight: 500;
+    border-bottom: 2px solid var(--border-color);
+}
+
+td {
+    color: var(--text-muted);
+}
+
+/* Highlight project links to stand out slightly inside table rows */
+td a {
+    color: var(--text-color);
+    border-bottom: 1px dashed var(--border-color);
+}
+
+td a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* Status Column Styling - ensures status alignments stay crisp */
+td:last-child {
+    font-size: 0.85rem;
+}
+
+/* Soft Muted Status Badge Styling */
+.status-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    white-space: nowrap;
+}
+
+.status-alive {
+    background-color: var(--status-alive-bg);
+    color: var(--status-alive-text);
+}
+
+.status-not-launched {
+    background-color: var(--status-not-launched-bg);
+    color: var(--status-not-launched-text);
+}
+
+.status-cancelled {
+    background-color: var(--status-cancelled-bg);
+    color: var(--status-cancelled-text);
+}
+
+/* --------------------------------------------------------------------------
+   7. JOURNAL FEED (<ul>)
+   Side-by-side layout aligning dates and titles.
+   -------------------------------------------------------------------------- */
+main > ul {
+    list-style: none;           /* Remove standard list bullets */
+    margin: 32px 0;
+}
+
+main > ul > li {
+    display: flex;              /* Flex layout for side-by-side date and title alignment */
+    align-items: baseline;      /* Vertically aligns baseline of text */
+    gap: 24px;                  /* Clean gap between time column and title link */
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+main > ul > li time {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    width: 110px;               /* Fixed width ensures dates stack and align perfectly */
+}
+
+main > ul > li a {
+    color: var(--text-color);
+    border-bottom: 1px dashed var(--border-color);
+}
+
+main > ul > li a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* --------------------------------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------------------------------- */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+    margin-top: 80px;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+footer li a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-bottom: none;
+}
+
+footer li a:hover {
+    color: var(--text-color);
+}
