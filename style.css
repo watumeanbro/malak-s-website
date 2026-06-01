@@ -127,15 +127,12 @@ nav li a.active {
 .theme-switcher {
     position: relative;
     display: inline-flex;
-    align-items: center;
+    align-items: center;    /* FORCE: Snaps the toggle circle to the vertical center of the nav bar links */
     justify-content: flex-end;
     margin-left: auto;
     flex: 0 0 auto;
     width: 24px;
     height: 24px;
-    
-    /* FIXED: Shifts the icon button down directly onto the navigation text baseline */
-    transform: translateY(6px);
 }
 
 .theme-callout {
@@ -177,9 +174,7 @@ body:not(.light-mode) .theme-arrow {
 
 /* Icon-only theme button */
 .theme-toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: relative;    /* FORCE: Keeps the button inline inside its parent container */
     width: 24px;
     height: 24px;
     background: transparent;
@@ -191,7 +186,6 @@ body:not(.light-mode) .theme-arrow {
     justify-content: center;
     outline: none;
     
-    /* FIXED: This forces the icon button color to match your nav links */
     color: var(--text-muted); 
     transition: color 0.15s ease;
 }
