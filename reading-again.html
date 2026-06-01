@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i am reading again! | Malak</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* Keep your book links exactly as they are */
+        .book-link {
+            color: var(--text-color) !important;
+            border-bottom: 1px dashed var(--border-color) !important;
+            padding-bottom: 1px;
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+        
+        .book-link:hover {
+            color: #f59e0b !important;
+            border-bottom: 1px solid #f59e0b !important;
+        }
+
+        /* FIXING THE HOVER MODE TO MATCH THE SCREENSHOT PERFECTLY */
+        .back-link {
+            color: var(--text-muted) !important;
+            border-bottom: 1px solid transparent !important; /* Invisible border line on idle to prevent text from jumping */
+            font-size: 0.95rem;
+            padding-bottom: 1px; /* Keeps the spacing consistent with your other links */
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--text-color) !important;                    /* Turns into the main white/dark text color */
+            border-bottom: 1px solid var(--accent-hover) !important; /* MATCHES SCREENSHOT: Crisp blue accent line underneath! */
+        }
+    </style>
+</head>
+<body>
+
+    <header style="margin-bottom: 40px;">
+        <a href="journal.html" class="back-link" style="display: inline-flex; align-items: center; gap: 6px;">
+            ← back to journal
+        </a>
+    </header>
+
+    <main>
+        <article>
+            <header style="margin-bottom: 24px;">
+                <h1 style="font-size: 1.6rem; font-weight: 500; margin-bottom: 8px;">i am reading again!</h1>
+                <time style="color: var(--text-muted); font-size: 0.9rem;">1 June, 2026</time>
+            </header>
+
+            <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem;">
+                <p>just 3 years ago reading books seemed like a ridiculous thing to me, like why would i read books other than those that i already have to read for school. but i was young so whatever..</p>
+                
+                <p>i started when i had just turned 15 (next month i’ll turn 17.. HELP). the first book i read was <a href="https://www.goodreads.com/book/show/69571.Rich_Dad_Poor_Dad" target="_blank" rel="noopener noreferrer" class="book-link">Rich Dad Poor Dad</a> lol, then i read other non-fiction books. fiction to me seemed like a waste of time.. at least until i read <a href="https://www.goodreads.com/book/show/18144590-the-alchemist" target="_blank" rel="noopener noreferrer" class="book-link">The Alchemist</a> (strongly recommend).</p>
+                
+                <p>that year i didn’t read dozens of books but at least i did read something. then time went by and i stopped reading again (if we don’t count the books that my literature teacher made me read). i actually did pick up a book from time to time, but i never managed to finish 10 pages.</p>
+                
+                <p>now i am back to reading, and most importantly, i am enjoying it more than ever. the book that made me read again is <a href="https://www.goodreads.com/book/show/32620332-the-seven-husbands-of-evelyn-hugo" target="_blank" rel="noopener noreferrer" class="book-link">The Seven Husbands of Evelyn Hugo</a> (strongly recommend again), which i forgot that i even had (i found it while i was cleaning the chaos of books in my bedroom).</p>
+                
+                <p>well, now i am reading in three languages, which sounds fancy but i am going crazy.. i realized that i read in arabic and english faster than i do in italian, and that’s probably because of my poor italian vocab.</p>
+                
+                <p>anyway, that’s all. if you’ve never read in your life, please consider it, it’s life-changing. plus, don’t make my mistake: read fiction too.</p>
+                
+                <p style="margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                    here is my goodreads profile: <a href="https://www.goodreads.com/user/show/198017879-malak" target="_blank" rel="noopener noreferrer">goodreads profile</a>
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        (function() {
+            const currentTheme = localStorage.getItem('theme') || localStorage.getItem('darkMode');
+            if (currentTheme === 'light' || document.documentElement.classList.contains('light-mode') || localStorage.getItem('light-mode') === 'true') {
+                document.body.classList.add('light-mode');
+            }
+        })();
+    </script>
+
+</body>
+</html>

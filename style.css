@@ -403,65 +403,62 @@ footer li a:hover {
    9. MOBILE RESPONSIVE OPTIMIZATION (Screens under 600px)
    ========================================================================== */
 @media (max-width: 600px) {
-    /* Reduce body page padding slightly so mobile content has more horizontal run */
     body {
         padding: 40px 16px;
     }
 
-    /* ----------------------------------------------------------------------
-       NAV BAR TWEAKS: Smaller font size and decreased link spacing
-       ---------------------------------------------------------------------- */
+    /* NAV BAR TWEAKS */
     nav {
         margin-bottom: 40px;
-        gap: 12px; /* Pulls navigation links closer to the theme-switcher block */
+        gap: 12px; 
     }
 
     nav ul {
-        gap: 12px; /* Decreases the empty gap spacing between individual text links */
+        gap: 12px; 
     }
 
     nav li a {
-        font-size: 0.85rem; /* Explicitly makes the menu links smaller */
+        font-size: 0.85rem; 
     }
 
-    /* Keep the floating handwritten callout clean and hidden on small mobile */
-    .theme-callout,
+    /* Bring the note back on mobile, just scale its text/spacing down slightly */
+    .theme-callout {
+        font-size: 0.85rem;
+        right: 32px;
+    }
+    
     .theme-arrow {
-        display: none !important;
+        width: 18px;
+        right: 12px;
     }
 
-
-    /* ----------------------------------------------------------------------
-       PROJECTS PAGE: Re-layout table cells to stack beautifully vertically
-       ---------------------------------------------------------------------- */
+    /* PROJECTS PAGE TABLE TO VERTICAL CARDS */
     table, thead, tbody, th, td, tr {
-        display: block; /* Overrides the rigid table row architecture */
+        display: block; 
     }
 
     thead {
-        display: none; /* Hides table headers (Project, Description) to eliminate layout clutter */
+        display: none; 
     }
 
     tr {
         border-bottom: 1px solid var(--border-color);
-        padding: 16px 0; /* Creates an isolated 'card' container layout for each project */
+        padding: 16px 0; 
     }
 
     td {
         border: none;
-        padding: 2px 0; /* Snaps text elements closer together inside the same project */
+        padding: 2px 0; 
         width: 100%;
         text-align: left;
     }
 
-    /* Style the Project Name to stand on its own line */
     td:first-child {
         font-weight: 700;
         font-size: 1rem;
         color: var(--text-color);
     }
 
-    /* Style the Description to flow fully and naturally underneath the title */
     td:nth-child(2) {
         font-size: 0.88rem;
         color: var(--text-muted);
@@ -469,7 +466,6 @@ footer li a:hover {
         margin: 4px 0 8px 0;
     }
 
-    /* Restores the tag block layout shape for status indicators */
     td:last-child {
         display: inline-block;
     }
