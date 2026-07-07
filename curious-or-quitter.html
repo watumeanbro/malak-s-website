@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>is it curiosity, or is it quitting? | Malak</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        .back-link {
+            color: var(--text-muted) !important;
+            border-bottom: 1px solid transparent !important;
+            font-size: 0.95rem;
+            padding-bottom: 1px;
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--text-color) !important;                    
+            border-bottom: 1px solid var(--accent-hover) !important;
+        }
+        
+        .emphasis-text {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header style="margin-bottom: 40px;">
+        <a href="journal.html" class="back-link" style="display: inline-flex; align-items: center; gap: 6px;">
+            ← back to journal
+        </a>
+    </header>
+
+    <main>
+        <article>
+            <header style="margin-bottom: 24px;">
+                <h1 style="font-size: 1.6rem; font-weight: 500; margin-bottom: 8px;">is it curiosity, or is it quitting when it gets hard?</h1>
+                <time style="color: var(--text-muted); font-size: 0.9rem;">7 July, 2026</time>
+            </header>
+
+            <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; line-height: 1.6;">
+                <p>this is one of the biggest problems you’ll face when you’re trying to teach yourself something. at first, it looks fascinating. you think you’ve finally found your passion. but then things get harder, the concepts get complicated, and it stops being effortless fun.</p>
+                
+                <p>my current experience with this is learning how to code. in the beginning, everything is easy and the programs actually work. but then, you hit the frustration wall: i understand the lectures, so why can’t i solve the problem sets? why isn’t my code working?</p>
+                
+                <p style="font-style: italic; color: var(--text-muted); padding-left: 12px; border-left: 2px solid var(--border-color);">
+                    instead of trying to solve the problem set, i just started reading medieval stories.
+                </p>
+                
+                <p>the paradox happens right here. suddenly, a completely different topic seems way more interesting. you drop what you were doing to dive into this new thing, and you still feel productive because you’re technically learning. it’s not like doomscrolling; you don’t feel like you're wasting your time.</p>
+                
+                <p>but this has happened to me so many times now. it just leaves me knowing a little bit about a million different things, without ever knowing enough about one specific field.</p>
+                
+                <p class="emphasis-text">
+                    like me, you might realize this loop. but breaking it is THE real challenge.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        (function() {
+            const currentTheme = localStorage.getItem('theme') || localStorage.getItem('darkMode');
+            if (currentTheme === 'light' || document.documentElement.classList.contains('light-mode') || localStorage.getItem('light-mode') === 'true') {
+                document.body.classList.add('light-mode');
+            }
+        })();
+    </script>
+
+</body>
+</html>
